@@ -3,7 +3,7 @@ from is_straight import is_straight
 
 
 class TestIsStraight(unittest.TestCase):
-    
+
     def test_ordered_straight_true(self):
         '''ordered straight should return True'''
         self.assertTrue(is_straight([1,2,3,4,5,6,7]))
@@ -20,8 +20,10 @@ class TestIsStraight(unittest.TestCase):
         '''repeated cards can still return True straight'''
         self.assertTrue(is_straight([1,3,4,1,1,2,5]))
 
-
-
+#edge case
+    def test_not_enough_cards(self):
+        '''not enough cards given for a straight should be false'''
+        self.assertFalse(is_straight([4,2,1,3]))
 
 if __name__ == '__main__':
     unittest.main()
