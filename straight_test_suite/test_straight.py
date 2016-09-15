@@ -25,5 +25,9 @@ class TestIsStraight(unittest.TestCase):
         '''not enough cards given for a straight should be false'''
         self.assertFalse(is_straight([4,2,1,3]))
 
+    def test_empty_list(self):
+        '''empty list should return false'''
+        self.assertFalse(is_straight([]))
+
 if __name__ == '__main__':
     unittest.main()
